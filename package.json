@@ -1,0 +1,46 @@
+{
+  "name": "pkg-name",
+  "version": "0.0.0",
+  "description": "Check whether a package name is available on npm and bower",
+  "license": "MIT",
+  "repository": "sindresorhus/pkg-name",
+  "bin": {
+    "pkg-name": "cli.js"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli",
+    "bin",
+    "app",
+    "npm",
+    "bower",
+    "package",
+    "pkg",
+    "name",
+    "check",
+    "available"
+  ],
+  "dependencies": {
+    "bower-name": "^0.1.0",
+    "chalk": "^0.4.0",
+    "each-async": "^0.1.2",
+    "npm-name": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
