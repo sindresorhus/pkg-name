@@ -13,7 +13,8 @@ module.exports = function (name, cb) {
 	eachAsync(Object.keys(types), function (el, i, next) {
 		types[el](name, function (err, available) {
 			if (err) {
-				return next(err);
+				next(err);
+				return;
 			}
 
 			ret[el] = available;
@@ -21,7 +22,8 @@ module.exports = function (name, cb) {
 		});
 	}, function (err) {
 		if (err) {
-			return cb(err);
+			cb(err);
+			return;
 		}
 
 		cb(null, ret);

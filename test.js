@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var pkgName = require('./index');
+var pkgName = require('./');
 
 it('should return false when package name is taken', function (cb) {
 	pkgName('jquery', function (err, available) {
