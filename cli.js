@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-var chalk = require('chalk');
+var logSymbols = require('log-symbols');
 var pkg = require('./package.json');
 var pkgName = require('./index');
 var input = process.argv[2];
@@ -29,9 +29,6 @@ pkgName(input, function (err, available) {
 		return;
 	}
 
-	var check = chalk.green(process.platform !== 'win32' ? '✔' : '√');
-	var cross = chalk.red(process.platform !== 'win32' ? '✖' : '×');
-
-	console.log((available.npm ? check : cross) + ' npm');
-	console.log((available.bower ? check : cross) + ' bower');
+	console.log((available.npm ? logSymbols.success : logSymbols.error) + ' npm');
+	console.log((available.bower ? logSymbols.success : logSymbols.error) + ' bower');
 });
