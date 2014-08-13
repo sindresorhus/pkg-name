@@ -1,6 +1,6 @@
 {
   "name": "pkg-name",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Check whether a package name is available on npm and bower",
   "license": "MIT",
   "repository": "sindresorhus/pkg-name",
