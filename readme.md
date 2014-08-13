@@ -5,7 +5,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save pkg-name
 ```
 
@@ -26,19 +26,15 @@ pkgName('jquery', function (err, available) {
 
 ![](screenshot.png)
 
-You can also use it as a CLI app by installing it globally:
-
-```bash
+```sh
 $ npm install --global pkg-name
 ```
 
-#### Usage
-
-```bash
+```sh
 $ pkg-name --help
 
-Usage
-  $ pkg-name <name>
+  Usage
+    pkg-name <name>
 ```
 
 

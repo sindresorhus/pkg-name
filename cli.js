@@ -3,23 +3,25 @@
 var logSymbols = require('log-symbols');
 var pkg = require('./package.json');
 var pkgName = require('./');
-var input = process.argv[2];
+var argv = process.argv.slice(2);
+var input = argv[0];
 
 function help() {
 	console.log([
-		pkg.description,
 		'',
-		'Usage',
-		'  $ pkg-name <name>'
+		'  ' + pkg.description,
+		'',
+		'  Usage',
+		'    pkg-name <name>'
 	].join('\n'));
 }
 
-if (!input || process.argv.indexOf('--help') !== -1) {
+if (!input || argv.indexOf('--help') !== -1) {
 	help();
 	return;
 }
 
-if (process.argv.indexOf('--version') !== -1) {
+if (argv.indexOf('--version') !== -1) {
 	console.log(pkg.version);
 	return;
 }
