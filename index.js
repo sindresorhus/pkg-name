@@ -11,7 +11,7 @@ module.exports = function (name, cb) {
 	};
 
 	eachAsync(Object.keys(types), function (el, i, next) {
-		types[el](name, function (err, available) {
+		types[el](name.toLowerCase(), function (err, available) {
 			if (err) {
 				next(err);
 				return;
