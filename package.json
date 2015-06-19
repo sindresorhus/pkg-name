@@ -38,6 +38,7 @@
     "bower-name": "^1.0.0",
     "each-async": "^1.0.0",
     "log-symbols": "^1.0.0",
+    "meow": "^3.3.0",
     "npm-name": "^1.0.1"
   },
   "devDependencies": {

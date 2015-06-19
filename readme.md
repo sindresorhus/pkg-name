@@ -34,7 +34,7 @@ $ npm install --global pkg-name
 $ pkg-name --help
 
   Usage
-    pkg-name <name>
+    $ pkg-name <name>
 ```
 
 

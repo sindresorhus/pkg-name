@@ -1,36 +1,25 @@
 #!/usr/bin/env node
 'use strict';
 var logSymbols = require('log-symbols');
-var pkg = require('./package.json');
+var meow = require('meow');
 var pkgName = require('./');
-var argv = process.argv.slice(2);
-var input = argv[0];
 
-function help() {
-	console.log([
-		'',
-		'  ' + pkg.description,
-		'',
-		'  Usage',
-		'    pkg-name <name>'
-	].join('\n'));
+var cli = meow({
+	help: [
+		'Usage',
+		'  $ pkg-name <name>'
+	]
+});
+
+if (cli.input.length === 0) {
+	console.error('Expected a package name');
+	process.exit(1);
 }
 
-if (!input || argv.indexOf('--help') !== -1) {
-	help();
-	return;
-}
-
-if (argv.indexOf('--version') !== -1) {
-	console.log(pkg.version);
-	return;
-}
-
-pkgName(input, function (err, available) {
+pkgName(cli.input[0], function (err, available) {
 	if (err) {
 		console.error(err.message);
 		process.exit(1);
-		return;
 	}
 
 	console.log((available.npm ? logSymbols.success : logSymbols.error) + ' npm');
