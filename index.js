@@ -4,6 +4,12 @@ var bowerName = require('bower-name');
 var npmName = require('npm-name');
 
 module.exports = function (name, cb) {
+	if (!(typeof name === 'string' && name.length !== 0)) {
+		throw new Error('Package name required');
+	}
+
+	name = name.toLowerCase();
+
 	var ret = {};
 	var types = {
 		bower: bowerName,
@@ -11,7 +17,7 @@ module.exports = function (name, cb) {
 	};
 
 	eachAsync(Object.keys(types), function (el, i, next) {
-		types[el](name.toLowerCase(), function (err, available) {
+		types[el](name, function (err, available) {
 			if (err) {
 				next(err);
 				return;

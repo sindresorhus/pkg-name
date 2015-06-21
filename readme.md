@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save pkg-name
 ```
 
@@ -15,7 +15,7 @@ $ npm install --save pkg-name
 ```js
 var pkgName = require('pkg-name');
 
-pkgName('jquery', function (err, available) {
+pkgName('chalk', function (err, available) {
 	console.log(available);
 	//=> {npm: false, bower: false}
 });
@@ -26,15 +26,21 @@ pkgName('jquery', function (err, available) {
 
 ![](screenshot.png)
 
-```sh
+```
 $ npm install --global pkg-name
 ```
 
-```sh
+```
 $ pkg-name --help
 
   Usage
     $ pkg-name <name>
+
+  Examples
+    $ bower-name multiline
+    ✖ Unavailable
+    $ bower-name unicorn-cake
+    ✔ Available
 ```
 
 
