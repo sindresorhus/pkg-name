@@ -1,3 +1,9 @@
+# Deprecated
+
+Use [`npm-name`](https://github.com/sindresorhus/npm-name) instead.
+
+---
+
 # pkg-name [![Build Status](https://travis-ci.org/sindresorhus/pkg-name.svg?branch=master)](https://travis-ci.org/sindresorhus/pkg-name)
 
 > Check whether a package name is available on npm and bower
